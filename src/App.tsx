@@ -3,7 +3,7 @@ import Button from '@mui/material/Button';
 import CloudUploadIcon from '@mui/icons-material/CloudUpload';
 import TextField from '@mui/material/TextField';
 import CircularProgress from '@mui/material/CircularProgress';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import './App.css';
 
 const VisuallyHiddenInput = styled('input')({
@@ -23,7 +23,7 @@ function App() {
   const [url, setUrl] = useState<string>('');
   const [processing, setProcessing] = useState(false);
   const [outputImages, setOutputImages] = useState<any>(null);
-  const [previewImage, setPreviewImage] = useState<string | null>(null); // Optional for preview display
+  // const [previewImage, setPreviewImage] = useState<string | null>(null); // Optional for preview display
 
   const handleFileChange = async (event: React.ChangeEvent<HTMLInputElement>) => {
     if (event.target.files && event.target.files[0]) {
@@ -41,27 +41,27 @@ function App() {
       }
 
       // Read the file as a data URL (Base64 encoded) for optional preview
-      const reader = new FileReader();
-      reader.onload = (event) => {
-        if (event.target?.result) {
-          setPreviewImage(event.target.result as string); // Set preview image URL (data URL)
-        }
-      };
-      reader.readAsDataURL(selectedFile);
+      // const reader = new FileReader();
+      // reader.onload = (event) => {
+      //   if (event.target?.result) {
+      //     setPreviewImage(event.target.result as string); // Set preview image URL (data URL)
+      //   }
+      // };
+      // reader.readAsDataURL(selectedFile);
 
       // Convert the file to Base64 for sending to the API
-      const base64Data = await new Promise<string>((resolve, reject) => {
-        const reader = new FileReader();
-        reader.onload = (event) => {
-          if (event.target?.result) {
-            resolve(event.target.result.toString());
-          } else {
-            reject(new Error('Failed to read file'));
-          }
-        };
-        reader.onerror = reject;
-        reader.readAsDataURL(selectedFile);
-      });
+      // const base64Data = await new Promise<string>((resolve, reject) => {
+      //   const reader = new FileReader();
+      //   reader.onload = (event) => {
+      //     if (event.target?.result) {
+      //       resolve(event.target.result.toString());
+      //     } else {
+      //       reject(new Error('Failed to read file'));
+      //     }
+      //   };
+      //   reader.onerror = reject;
+      //   reader.readAsDataURL(selectedFile);
+      // });
 
       setFile(selectedFile);
     }
@@ -112,7 +112,7 @@ function App() {
 
         processS3Response(s3Response);
       }
-    } catch (error) {
+    } catch (error:any) {
       console.error('Error during processing:', error);
       alert(`Error: ${error.message}`);
     } finally {
