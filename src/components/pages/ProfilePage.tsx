@@ -1,12 +1,12 @@
 // ProfilePage.tsx
 import { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+// import { useParams } from 'react-router-dom';
 import { Box, Typography, TextField, Button, Grid } from '@mui/material';
 import { getAccessToken } from '../../utils/sessionManager';
 import './ProfilePage.css';
 
 function ProfilePage() {
-  const { userID } = useParams();
+//   const { userID } = useParams();
   const [name, setName] = useState('');
   const [images, setImages] = useState<string[]>([]);
 

@@ -1,6 +1,6 @@
 // AuthCard.tsx
 import { useState } from 'react';
-import { Box, Card, TextField, Button, Checkbox, FormControlLabel, Typography } from '@mui/material';
+import { Card, TextField, Button, Checkbox, FormControlLabel, Typography } from '@mui/material';
 import { setAccessToken } from '../../utils/sessionManager';
 import './AuthCard.css';
 
