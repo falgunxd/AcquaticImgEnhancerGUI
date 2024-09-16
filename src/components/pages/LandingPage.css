@@ -1,0 +1,39 @@
+.landing-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/path/to/underwater-background.jpg') no-repeat center center/cover;
+    color: #fff;
+  }
+  
+  .landing-container {
+    text-align: center;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+  }
+  
+  .landing-title {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .landing-subtitle {
+    font-size: 1.25rem;
+    margin-bottom: 30px;
+    line-height: 1.6;
+  }
+  
+  .landing-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .landing-button {
+    padding: 10px 20px;
+    font-size: 1rem;
+  }
+  
