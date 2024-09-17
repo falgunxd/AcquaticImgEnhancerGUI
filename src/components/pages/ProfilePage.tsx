@@ -1,12 +1,12 @@
 // ProfilePage.tsx
 import { useState, useEffect } from 'react';
-// import { useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { Box, Typography, TextField, Button, Grid } from '@mui/material';
 import { getAccessToken } from '../../utils/sessionManager';
 import './ProfilePage.css';
 
 function ProfilePage() {
-//   const { userID } = useParams();
+  const { userID } = useParams();
   const [name, setName] = useState('');
   const [images, setImages] = useState<string[]>([]);
 
@@ -16,8 +16,8 @@ function ProfilePage() {
       const accessToken = getAccessToken();
       const response = await fetch('https://205er4kd0g.execute-api.ap-south-1.amazonaws.com/default/aieRetrieveUserLinks', {
         method: 'POST',
-        headers: { Authorization: `Bearer ${accessToken}` },
-        body: JSON.stringify({ accessToken }),
+        // headers: { Authorization: `Bearer ${accessToken}` },
+        body: JSON.stringify({ userID, accessToken }),
       });
 
       if (response.ok) {

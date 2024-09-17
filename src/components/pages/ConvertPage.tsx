@@ -107,7 +107,7 @@ function ConvertPage() {
     }
 
     const data = await s3Response.json();
-    console.log('Upload response:', data);
+    // console.log('Upload response:', data);
 
     const { bucket, key } = data;
 
