@@ -80,7 +80,7 @@ function AuthCard() {
       if (Object.keys(images).length > 0 && isAuthenticated()){
         const resp = await handleSaveImages();
         const saveData = resp;
-        // console.log(saveData);
+        console.log(saveData);
       }
 
       const getUserIdResp = await fetch("https://205er4kd0g.execute-api.ap-south-1.amazonaws.com/default/aieGetUserId", {
